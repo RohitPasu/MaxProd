@@ -1,0 +1,16 @@
+import math
+
+# We want to find the max product in an array
+def findMaxProduct(arr):
+  output = []
+  iterator = []
+  for i in arr:
+    iterator.append(i)
+    if len(iterator) < 3:
+      output.append(-1)
+    else:
+      # Sorted will give the array with the smallest numbers first
+      iterator = sorted(iterator)
+      maxProd = iterator[len(iterator) - 1] * iterator[len(iterator) - 2] * iterator[len(iterator) - 3]
+      output.append(maxProd)
+  return output
